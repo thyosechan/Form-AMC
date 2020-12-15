@@ -1,5 +1,6 @@
 import 'package:form/formListBaterai.dart';
 import 'package:flutter/material.dart';
+import 'package:form/formRectifier.dart';
 import 'package:form/home.dart';
 import 'package:form/formSwitch.dart';
 import 'package:form/formRouter.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/formSwitch': (context) => FormSwitch(),
         '/formRouter': (context) => FormRouter(),
         '/formKabelFo': (context) => FormKabelFo(),
+        '/formListRectifier': (context) => FormListRectifier(),
       },
       debugShowCheckedModeBanner: false,
     );

@@ -1,5 +1,6 @@
 import 'package:form/formListBaterai.dart';
 import 'package:flutter/material.dart';
+import 'package:form/formRectifier.dart';
 import 'dart:core';
 
 import 'package:form/formSwitch.dart';
@@ -58,6 +59,16 @@ class _HomeState extends State<Home> {
                   child: Text('Form Kabel FO'),
                   onPressed: () {
                     Navigator.pushNamed(context, FormKabelFo.routeName);
+                  }),
+            ),
+            Container(
+              alignment: Alignment.center,
+              height: 30,
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: RaisedButton(
+                  child: Text('Form List Rectifier'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, FormListRectifier.routeName);
                   }),
             ),
           ],
