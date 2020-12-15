@@ -317,7 +317,7 @@ class _FormRouterState extends State {
                             height: 33,
                             child: new RadioListTile(
                               //radio power
-                              value: "normal",
+                              value: "Nyala",
                               title: new Text("Nyala"),
                               groupValue: r1,
                               onChanged: (String value) {
@@ -334,7 +334,7 @@ class _FormRouterState extends State {
                           SizedBox(
                             height: 33,
                             child: new RadioListTile(
-                              value: "tidak normal",
+                              value: "Mati",
                               title: new Text("Mati"),
                               groupValue: r1,
                               onChanged: (String value) {
@@ -384,7 +384,7 @@ class _FormRouterState extends State {
                     Container(
                       alignment: Alignment.centerLeft,
                       height: 30,
-                      margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      margin: EdgeInsets.fromLTRB(0, 15, 0, 10),
                       color: Colors.black26,
                       child: Text(
                         "   Main Unit (Box)",
@@ -407,8 +407,7 @@ class _FormRouterState extends State {
                           SizedBox(
                             height: 33,
                             child: new RadioListTile(
-                              //radio Main unit
-                              value: "normal",
+                              value: "Nyala",
                               title: new Text("Nyala"),
                               groupValue: r2,
                               onChanged: (String value) {
@@ -425,7 +424,7 @@ class _FormRouterState extends State {
                           SizedBox(
                             height: 33,
                             child: new RadioListTile(
-                              value: "tidak normal",
+                              value: "Mati",
                               title: new Text("Mati"),
                               groupValue: r2,
                               onChanged: (String value) {
@@ -474,7 +473,7 @@ class _FormRouterState extends State {
                     Container(
                       alignment: Alignment.centerLeft,
                       height: 30,
-                      margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      margin: EdgeInsets.fromLTRB(0, 15, 0, 10),
                       color: Colors.black26,
                       child: Text(
                         "   Fan/Filter",
@@ -498,7 +497,7 @@ class _FormRouterState extends State {
                             height: 33,
                             child: new RadioListTile(
                               //radio Fan
-                              value: "normal",
+                              value: "Nyala",
                               title: new Text("Nyala"),
                               groupValue: r3,
                               onChanged: (String value) {
@@ -515,7 +514,7 @@ class _FormRouterState extends State {
                           SizedBox(
                             height: 33,
                             child: new RadioListTile(
-                              value: "tidak normal",
+                              value: "Mati",
                               title: new Text("Mati"),
                               groupValue: r3,
                               onChanged: (String value) {
