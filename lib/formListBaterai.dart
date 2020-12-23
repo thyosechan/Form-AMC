@@ -9,6 +9,9 @@ class FormListBaterai extends StatefulWidget {
 }
 
 class _FormListBateraiState extends State {
+  TextEditingController etLokasi = new TextEditingController();
+  //TextEditingController etPassword = new TextEditingController();
+
   bool _show1 = true;
   bool _show2 = true;
   bool _show3 = true;
@@ -21,7 +24,8 @@ class _FormListBateraiState extends State {
       txtradio2 = "",
       txtradio3 = "",
       txtradio4 = "",
-      unit = "Unit 1";
+      unit = "Unit 1",
+      lokasi = "";
 
   void click() {
     setState(() {
@@ -29,6 +33,7 @@ class _FormListBateraiState extends State {
       txtradio2 = r2;
       txtradio3 = r3;
       txtradio4 = r4;
+      lokasi = etLokasi.text;
     });
   }
 
@@ -38,6 +43,8 @@ class _FormListBateraiState extends State {
       txtradio2 = "";
       txtradio3 = "";
       txtradio4 = "";
+      lokasi = "";
+      etLokasi.text = "";
     });
   }
 
@@ -157,7 +164,9 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: etLokasi,
                         decoration: InputDecoration(
+                          hintText: 'Lokasi saat ini',
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
                         ),
@@ -858,6 +867,10 @@ class _FormListBateraiState extends State {
                         ),
                         new Text(
                           txtradio3,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        new Text(
+                          lokasi,
                           style: TextStyle(fontSize: 20),
                         ),
                       ],
