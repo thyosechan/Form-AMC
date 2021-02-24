@@ -11,7 +11,6 @@ class FormListRectifier extends StatefulWidget {
 class _FormListRectifierState extends State {
   bool _show1 = true;
   bool _show2 = true;
-  bool _show3 = true;
 
   String r1 = "",
       r2 = "",
@@ -66,18 +65,6 @@ class _FormListRectifierState extends State {
   void _pilihr2(String value) {
     setState(() {
       r2 = value;
-    });
-  }
-
-  void _pilihr3(String value) {
-    setState(() {
-      r3 = value;
-    });
-  }
-
-  void _pilihr4(String value) {
-    setState(() {
-      r4 = value;
     });
   }
 

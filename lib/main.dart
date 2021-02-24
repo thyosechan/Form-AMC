@@ -5,6 +5,7 @@ import 'package:form/home.dart';
 import 'package:form/formSwitch.dart';
 import 'package:form/formRouter.dart';
 import 'package:form/formKabelFO.dart';
+import 'package:form/DDandRB.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/formRouter': (context) => FormRouter(),
         '/formKabelFo': (context) => FormKabelFo(),
         '/formListRectifier': (context) => FormListRectifier(),
+        '/DDandRB': (context) => DDandRB(),
       },
       debugShowCheckedModeBanner: false,
     );

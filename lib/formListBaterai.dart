@@ -1,6 +1,8 @@
 import 'dart:core';
+//import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:form/home.dart';
+import 'package:http/http.dart' as http;
 
 class FormListBaterai extends StatefulWidget {
   static const routeName = '/formListBaterai';
@@ -8,13 +10,45 @@ class FormListBaterai extends StatefulWidget {
   _FormListBateraiState createState() => _FormListBateraiState();
 }
 
-class _FormListBateraiState extends State {
-  TextEditingController etLokasi = new TextEditingController();
-  //TextEditingController etPassword = new TextEditingController();
+class _FormListBateraiState extends State<FormListBaterai> {
+  //TextEditingController controllerUnit = new TextEditingController();
+  TextEditingController controllerLokasi = new TextEditingController();
+  TextEditingController controllerEquipment = new TextEditingController();
+  TextEditingController controllerMerk = new TextEditingController();
+  TextEditingController controllerType = new TextEditingController();
+  TextEditingController controllerTgl = new TextEditingController();
+  TextEditingController controllerKLtemp = new TextEditingController();
+  TextEditingController controllerKLhump = new TextEditingController();
+  TextEditingController controllerNoseri = new TextEditingController();
+  TextEditingController controllerKetbat = new TextEditingController();
+  //TextEditingController controllerRBtemphump = new TextEditingController();
+  TextEditingController controllerSuhu = new TextEditingController();
+  TextEditingController controllerDebu = new TextEditingController();
+
+  void insert() {
+    var url = "http://10.0.2.2/amc_mysql/adddata.php";
+    http.post(url, body: {
+      //"unit": controllerUnit.text,
+      "lokasi": controllerLokasi.text,
+      "equipment": controllerEquipment.text,
+      "merk": controllerMerk.text,
+      "type": controllerType.text,
+      "tglinspek": controllerTgl.text,
+      "KLtemp": controllerKLtemp.text,
+      "KLhump": controllerKLhump.text,
+      "noseribat": controllerNoseri.text,
+      "ketbat": controllerKetbat.text,
+      //"RBtemphump": controllerRBtemphump.text,
+      "suhu": controllerSuhu.text,
+      "debu": controllerDebu.text,
+    });
+  }
 
   bool _show1 = true;
   bool _show2 = true;
   bool _show3 = true;
+
+  TextEditingController etLokasi = new TextEditingController();
 
   String r1 = "",
       r2 = "",
@@ -164,7 +198,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
-                        controller: etLokasi,
+                        controller: controllerLokasi,
                         decoration: InputDecoration(
                           hintText: 'Lokasi saat ini',
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
@@ -187,6 +221,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerEquipment,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -209,6 +244,7 @@ class _FormListBateraiState extends State {
 
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerMerk,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -230,6 +266,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerType,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -251,6 +288,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerTgl,
                         decoration: InputDecoration(
                           //prefixIcon: Icon(Icons.calendar_today),
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
@@ -283,6 +321,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerKLtemp,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -304,6 +343,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerKLhump,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -313,7 +353,7 @@ class _FormListBateraiState extends State {
                     Container(
                       // baterai
                       alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                      margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                       color: Colors.black26,
                       child: Text(
                         "  I. BATERAI",
@@ -335,6 +375,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerNoseri,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -364,6 +405,7 @@ class _FormListBateraiState extends State {
                       //input ket baterai
                       margin: EdgeInsets.only(bottom: 0),
                       child: TextField(
+                        controller: controllerKetbat,
                         maxLines: null,
                         maxLength: 200,
                         keyboardType: TextInputType.multiline,
@@ -442,6 +484,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerSuhu,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -463,6 +506,7 @@ class _FormListBateraiState extends State {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 10),
                       child: TextField(
+                        controller: controllerDebu,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                           border: OutlineInputBorder(),
@@ -844,10 +888,11 @@ class _FormListBateraiState extends State {
                                 minWidth: 100.0,
                                 child: new RaisedButton(
                                   onPressed: () {
+                                    insert();
                                     Navigator.pushNamed(
                                         context, Home.routeName);
                                   },
-                                  child: new Text("Home"),
+                                  child: new Text("POST"),
                                 ),
                               ),
                             ),

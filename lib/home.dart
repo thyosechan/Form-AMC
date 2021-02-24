@@ -6,6 +6,7 @@ import 'dart:core';
 import 'package:form/formSwitch.dart';
 import 'package:form/formRouter.dart';
 import 'package:form/formKabelFo.dart';
+import 'package:form/DDandRB.dart';
 
 class Home extends StatefulWidget {
   static const routeName = '/';
@@ -69,6 +70,16 @@ class _HomeState extends State<Home> {
                   child: Text('Form List Rectifier'),
                   onPressed: () {
                     Navigator.pushNamed(context, FormListRectifier.routeName);
+                  }),
+            ),
+            Container(
+              alignment: Alignment.center,
+              height: 30,
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: RaisedButton(
+                  child: Text('TESTING DD and RB'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, DDandRB.routeName);
                   }),
             ),
           ],
